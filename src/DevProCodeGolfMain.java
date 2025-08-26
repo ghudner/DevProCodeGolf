@@ -1,7 +1,6 @@
 public class DevProCodeGolfMain {
     public static void main(String[] args) {
-        // Names of the challenge tester classes to run
-        Object[] testers = {
+        IChallenge[] testers = {
             new ChallengeOne()
         };
 
@@ -9,10 +8,9 @@ public class DevProCodeGolfMain {
         System.out.printf("\n=== Java - DevPro Code Golf Summary ===\n");
 
         for (int i = 0; i < testers.length; i++) {
-            Object tester = testers[i];
+            IChallenge tester = testers[i];
             try {
-                // Call runTests() method via reflection to avoid compile dependency on specific interface
-                int failedCount = (int) tester.getClass().getMethod("runTests").invoke(tester);
+                int failedCount = (int) tester.runTests();
 
                 if (failedCount == 0) {
                     System.out.printf("Challenge %d: ✅ All tests passed\n", i + 1);

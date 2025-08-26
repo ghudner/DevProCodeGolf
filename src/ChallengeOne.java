@@ -1,60 +1,64 @@
-public class ChallengeOne {
-    //CHALLENGE 1: Is it a palindrome?
-    //Write a function that recieves a String and returns boolean true only if the 
-    //string has the same characters in reverse. Ex) "anna" -> true, "abcd" -> false
+public class ChallengeOne implements IChallenge {
+    //CHALLENGE 1: Number Sequence
+    //Write a function that recieves an int and returns a String that contains 
+    //a sequence of all the numbers from 1 to that integer concatenated together.
+    //If the input integer is zero, return an empty string. 
+    //If the input integer is negative, ignore the negative sign and return the sequence as normal. e.g.:
     //
-    //      * Not case sensitive:   "aaaAAA" -> true
-    //      * Ignore all spaces:    "a a a aaa" -> true
+    //       4   -> "1234"
+    //       -11 -> "1234567891011"
+    //       0   -> ""
     //
-    
     
     //All characters (including spaces/newlines) in the function p() below count towards your total***
 
-
     // *** START HERE ***
 
-   boolean p(String s) { return true; }
+   String p(int n) { return ""; }
 
     // *** END HERE ***
 
 
     //---SAMPLE SOLUTION---
-    //TODO: DELETE THIUS BEFORE THE COMPETITION
-   boolean ps(String s) {
-        s = s.toLowerCase().replaceAll("[^a-z0-9]", "");
-        return new StringBuilder(s).reverse().toString().equals(s);
+    String pExampleSolution(int n){
+        n=Math.abs(n);
+        StringBuilder s=new StringBuilder();
+        for(int i=1;i<=n;i++)s.append(i);
+        return s.toString();
     }
-    //TODO: DELETE THIUS BEFORE THE COMPETITION
+     //---END SAMPLE SOLUTION---
 
  
     //---DO NOT MODIFY ANY CODE BELOW---
+    @Override
     public int runTests() {
         ChallengeOne tester = new ChallengeOne();
 
-        String[] inputs = {
-            "A man a plan a canal Panama",
-            "Eva can I see bees in a cave",
-            "Hello World",
-            "ABRACARBA",
-            "Racecar",
-            "DevPro step on no pets a step on no pets orp ved",
-            "Not a palindrome",
-            "12321",
-            "123abccba321",
-            "This is definitely not"
+        Integer[] inputs = {
+            8,
+            0,
+            -1,
+            7,
+            32,
+            -5,
+            6,
+            20,
+            -12,
+            -0
         };
    
-        boolean[] expectedResults = {
-            true,
-            true,
-            false,
-            true,
-            true,
-            true,
-            false,
-            true,
-            true,
-            false};
+        String[] expectedResults = {
+            "12345678",
+            "",
+            "1",
+            "1234567",
+            "1234567891011121314151617181920212223242526272829303132",
+            "12345",
+            "123456",
+            "1234567891011121314151617181920",
+            "123456789101112",
+            ""
+        };
 
 
         System.out.println("\n======================================");
@@ -62,13 +66,13 @@ public class ChallengeOne {
 
         int testsFailed = 0;
          for (int i = 0; i < inputs.length; i++) {
-             boolean r;
+             String r;
             try {
                 r = tester.p(inputs[i]);
             } catch (Exception e) {
                 testsFailed++;
                 continue;
-            }if (r != expectedResults[i]) {
+            }if (!r.equals(expectedResults[i])) {
                 testsFailed++;
             }
         }
@@ -81,7 +85,7 @@ public class ChallengeOne {
 
         for (int i = 0; i < inputs.length; i++) 
         {
-            boolean r;
+            String r;
             try {
                 r = tester.p(inputs[i]);
             } 
@@ -89,7 +93,7 @@ public class ChallengeOne {
                 System.out.printf("Test #%2d ERROR — Input: %-35s threw exception: %s%n", i + 1, inputs[i], e);
                 continue;
             }
-            if (r == expectedResults[i]) {
+            if (r.equals(expectedResults[i])) {
                 System.out.printf("Test #%2d passed — Input: %-35s Output: %b%n", i + 1, inputs[i], r);
             } else {
                 System.out.printf("Test #%2d FAILED — Input: %-35s Output: %b (Expected: %b)%n", i + 1, inputs[i], r, expectedResults[i]);
