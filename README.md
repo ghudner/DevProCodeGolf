@@ -1,18 +1,34 @@
-## Getting Started
+# Welcome to DevPro Code Golf! 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+### There are 5 challenges in Java and JavaScript here: 
+`src/Java/Challenges/ChallengeX.java`
 
-The workspace contains two folders by default, where:
+`src/JavaScript/Challenges/ChallengeX.js`
+- Inside each file, you’ll find a single function stub. **Implement `f()` with the least number of characters possible (including whitespaces)**
+- **You may only modify the function itself**  - no touching the test harness and **no imports/libraries**
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Running the main functions in src/JavaCodeGolfMain.java and src/JavaScriptCodeGolfMain.js will execute **10 test cases per challenge**. 
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Use these commands to test your code: 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+`node src/JavaScriptCodeGolfMain.js`
 
-## Dependency Management
+`javac -d ./bin ./src/**/*.java && java -cp ./bin JavaCodeGolfMain`
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Once you pass all 50 tests, you’ll see this message:  
+
+`🏆🏆🏆 !!All challenges passed!! 🏆🏆🏆`
+
+---
+
+## 🎯 Scoring Rules and getting your total
+
+- Your score is the **character count of your whole function** (Lower is better)
+- You get a **+100 character penalty** for every failed test - make sure they all pass!
+
+### To get your total score, run:
+
+`python3 playerScore.py`  
+
+(or `python playerScore.py` if you're an OG Python-er and that doesn't work)
