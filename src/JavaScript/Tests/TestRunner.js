@@ -7,7 +7,7 @@ class TestRunner {
         const actual = challenge.f(inputs[i]);
         if (actual !== expectedResults[i]) {
           console.log(
-            `❌ Test ${i + 1} failed: input=${inputs[i]} expected="${expectedResults[i]}" got="${actual}"`
+            `❌ Test ${i + 1} failed: input=${inputs[i]} expected=${expectedResults[i]} got=${actual}`
           );
           failed++;
         }

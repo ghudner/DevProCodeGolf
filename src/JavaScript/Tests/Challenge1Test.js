@@ -3,30 +3,8 @@ const TestRunner = require("./TestRunner");
 
 class Challenge1Test{
   runTests() {
-    const inputs = [
-      8, 
-      0, 
-      -1, 
-      7, 
-      32, 
-      -5, 
-      6, 
-      20, 
-      -12, 
-      -0
-    ];
-    const expectedResults = [
-      "12345678", 
-      "", 
-      "1", 
-      "1234567",
-      "1234567891011121314151617181920212223242526272829303132",
-      "12345", 
-      "123456", 
-      "1234567891011121314151617181920",
-      "123456789101112", 
-      ""
-    ];
+    const inputs = [123, -49, 0, 9999, 2468, -1357, 11111, 908172, -2024, 5];
+    const expectedResults = [6, 13, 0, 36, 20, 16, 5, 27, 8, 5];
 
     return TestRunner.runTests(new Challenge1(), inputs, expectedResults);
   }
