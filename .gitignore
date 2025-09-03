@@ -4,3 +4,5 @@ out/*
 __pycache__
 .DS_Store
 src/JavaScript/Challenges/solutions.js
+src/Java/Tests/solutions.java
+src/JavaScript/Tests/solutions.js

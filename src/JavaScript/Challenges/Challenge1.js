@@ -1,7 +1,7 @@
 class Challenge1{
   //CHALLENGE 1: Sum of Digits
   //Write a function that receives an integer and returns the sum of its digits.
-  //Negative numbers should be treated as positive.
+  //Negative numbers should be treated as positive. Ex)
   //
   //     123  -> 6
   //     -49  -> 13

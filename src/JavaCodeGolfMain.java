@@ -1,10 +1,14 @@
 import Java.Tests.Challenge1Test;
+import Java.Tests.Challenge2Test;
+import Java.Tests.Challenge3Test;
+import Java.Tests.Challenge4Test;
+import Java.Tests.Challenge5Test;
 import Java.Tests.ChallengeTest;
 
 public class JavaCodeGolfMain {
     public static void main(String[] args) {
         ChallengeTest[] testers = {
-            new Challenge1Test()
+            new Challenge1Test(), new Challenge2Test(), new Challenge3Test(), new Challenge4Test(), new Challenge5Test()
         };
 
         int totalFailures = 0;

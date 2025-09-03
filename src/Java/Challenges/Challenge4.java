@@ -2,13 +2,12 @@ package Java.Challenges;
 import Java.Tests.Challenge;
 import java.util.*;
 
-public class Challenge1 implements Challenge<Integer, Integer> {
-    //CHALLENGE 1: Sum of Digits
-    //Write a function that receives an integer and returns the sum of its digits.
-    //Negative numbers should be treated as positive. Ex)
+public class Challenge4 implements Challenge<Integer, Integer> {
+    //CHALLENGE 4: Descending Sort Digits
+    //Write a function that receives an integer and returns its digits sorted in descending order. Ex)
     //
-    //     123  -> 6
-    //     -49  -> 13
+    //     1234 -> 4321
+    //     509  -> 950
     //     0    -> 0
     //
     @Override

@@ -3,8 +3,29 @@ const TestRunner = require("./TestRunner");
 
 class Challenge5Test{
   runTests() {
-    const inputs = ["racecar", "hello", "Madam", "noon", "abcba", "Python", "Level", "openai", "rotor", "world"];
-    const expectedResults = ["true", "false", "true", "true", "true", "false", "true", "false", "true", "false"];
+    const inputs = [
+      "A man a plan a canal Panama",
+      "Eva can I see bees in a cave",
+      "Hello World",
+      "ABRACARBA",
+      "Racecar",
+      "DevPro step on no pets a step on no pets orp ved",
+      "Not a palindrome",
+      "12321",
+      "123abccba321",
+      "This is definitely not"];
+
+    const expectedResults = [
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false];
 
     return TestRunner.runTests(new Challenge5(), inputs, expectedResults);
   }
